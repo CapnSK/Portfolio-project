@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      {% load staticfiles %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="sankalp_k">
+      <meta name="generator" content="Jekyll v4.0.1">
+      <title>Home - Sankalp Kulkarni</title>
+
+      <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+
+      <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+      <!-- Custom styles for this template -->
+      
+  </head>
+  <body  class="bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Sankalp Kulkarni</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-light" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% static 'Resume(1).pdf' %}" target="_blank">Resume <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/sankalp-kulkarni-0765a314b">LinkedIn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/CapnSK">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron text-white" style="background-image: url({% static 'background.jpg' %}); background-repeat: no-repeat; background-size: cover; background-position: center center; margin-bottom: 2px; margin-top: 30px;">
+      <div class="container">
+        <h1 class="display-3">Hello I'm Sankalp Kulkarni!</h1>
+        <p> “There is only one good, knowledge, and one evil, ignorance” – Socrates </p>
+        <p class="text-center"><a class="btn btn-primary btn-lg" href="mailto: kulkarnisankalp21@gmail.com" role="button">Email Me</a></p>
+      </div>
+    </div>
+  <div class="album py-5 bg-dark" style="background-image: url({% static 'bg2.jpg' %}); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="container">
+      <div class="row">
+        {% for id,job in jobDict %}
+
+        <div class="col-lg-4 d-flex align-items-stretch">
+          <div class = "card mb-4 box-shadows bg-primary text-white">
+            <h5 class="card-title text-white text-center"style="height: 15px;">{{ job.title }}</h5>
+            <a href="{{ job.uri }}">
+              <img class = "card-img-top" src="{{ job.image.url }}" height="300" width="200"/>
+            </a>
+            <div class="card-body">
+              <p class="card-text">{{ job.summary }} </p>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+
+
+  <footer class="bg-dark text-white" style= "position:fixed; left: 0px; bottom: 0px; width: 100%">
+      <div class="container text-center">
+        <p>&copy; Sankalp Kulkarni {% now "Y" %}</p>
+      </div>
+  </footer>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+  </html>
